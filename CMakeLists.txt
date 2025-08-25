@@ -1,15 +1,14 @@
 cmake_minimum_required(VERSION 3.10)
-project(sample_cpp_demo)
+project(sample_c_demo C)
 
-# Force clang if requested
 if(USE_CLANG)
     set(CMAKE_C_COMPILER clang)
-    set(CMAKE_CXX_COMPILER clang++)
 endif()
 
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_C_STANDARD 99)
+set(CMAKE_C_STANDARD_REQUIRED ON)
 
-add_executable(sample_cpp_demo
-    sample_cpp_demo.cpp
-    a2l_generator.cpp
+add_executable(sample_c_demo
+    main.c
+    a2l_generator.c
 )
